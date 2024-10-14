@@ -1,0 +1,23 @@
+#include<stdio.h>
+void main ()
+{
+    int a,b;
+    printf("enter two numbers");
+    scanf("%d %d",&a,&b);
+    char op;
+    printf("enter op");
+    scanf(" %c",op);
+    switch(op)
+    {
+        case '+': printf("the sum is %d",a+b);
+                  break;
+        case '-':printf("the diff is %d",a-b);
+                 break;
+        case '*': printf("the multiplication is %d",a*b);
+                  break;
+        case '/': printf("the divison is %d",a/b);
+                  break;
+        case '%': printf("the remainder is %d",a%b);              
+                   
+}}
+}
