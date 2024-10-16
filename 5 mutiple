@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include<conio.h>
+Void main()
+{
+   For(int i=100; i<1000; i++)
+   {
+       If(i%5!=0)
+       { 
+          Printf(“%d”,i);
+       }
+       Else
+               Continue;
+    }
+}
