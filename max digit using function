@@ -1,0 +1,30 @@
+#include <stdio.h>
+int max(int digits[], int size)
+{
+    int max = digits[0];
+    for (int i = 1; i < size; i++)
+    {
+        if (digits[i] > max)
+        {
+            max = digits[i];
+        }
+    }
+    return max;
+}
+int main()
+ {
+    int number;
+    printf("Enter a number: ");
+    scanf("%d", &number);
+    int digits[10];
+    int size = 0;
+    while (number > 0)
+    {
+        digits[size] = number % 10;
+        number /= 10;
+        size++;
+    }
+    int result = max(digits, size);
+    printf("The maximum digit in the given number is %d\n", result);
+    return 0;
+}
