@@ -1,0 +1,42 @@
+#include<stdio.h>
+void starfunc(int n);
+void hashfunc(int n);
+void starfunc(int n)
+{
+    int i,j;
+    for(i=n;i>=1;i--)
+    {
+     for(j=1;j<=i;j++)
+     {
+      printf("*");
+     }
+     printf("\n");
+    }
+}
+void hashfunc(int n)
+{
+    int i,j;
+    for(i=n;i>=1;i--)
+    {
+     for(j=1;j<=i;j++)
+     {
+      printf("#");
+     }
+     printf("\n");
+    }
+}
+int main()
+{
+    int a; 
+    int s;
+    printf("enter no of rows");
+    scanf("%d",&a);
+    printf("enter what kind of patterns u want");
+    printf("1-star pattern\n 2-hash pattern");
+    scanf("%d",&s);
+    if(s==1)
+    starfunc(a);
+    else
+    hashfunc(a);    
+    return 0;
+}
