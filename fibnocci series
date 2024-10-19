@@ -1,0 +1,75 @@
+#include <stdio.h>
+int main() 
+{
+    int n, first = 0, second = 1, next;
+
+    // Input the value of n from the user
+    printf("Enter the number of terms in the Fibonacci series: ");
+    scanf("%d", &n);
+
+    printf("Fibonacci Series: ");
+
+    // Generate Fibonacci series
+    for (int i = 0; i < n; i++) {
+        if (i <= 1) {
+            next = i; // For the first two terms, print 0 and 1
+        } else {
+            next = first + second; // Next term is the sum of the previous two
+            first = second;        // Update first to the second term
+            second = next;         // Update second to the next term
+        }
+        printf("%d ", next); // Print the next term
+    }
+    printf("\n");
+
+    return 0;
+}
+#include <stdio.h>
+
+int main() 
+{
+    int month, year, days;
+
+    // Get user input
+    printf("Enter month (1-12): ");
+    scanf("%d", &month);
+    printf("Enter year: ");
+    scanf("%d", &year);
+
+    // Determine number of days in the month
+    if (month < 1 || month > 12) {
+        printf("Invalid month. Please enter a value between 1 and 12.\n");
+        return 1;
+    }
+
+    switch (month) {
+        case 1: // January
+        case 3: // March
+        case 5: // May
+        case 7: // July
+        case 8: // August
+        case 10: // October
+        case 12: // December
+            days = 31;
+            break;
+        case 4: // April
+        case 6: // June
+        case 9: // September
+        case 11: // November
+            days = 30;
+            break;
+        case 2: // February
+            // Check for leap year
+            if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+                days = 29; // Leap year
+            } else {
+                days = 28; // Not a leap year
+            }
+            break;
+        default:
+            days = 0; // This should never happen due to earlier check
+    }
+
+    printf("Number of days in month %d of year %d: %d\n", month, year, days);
+    return 0;
+}
