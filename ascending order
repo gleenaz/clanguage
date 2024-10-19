@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Function to compare for ascending order
+int compareAsc(const void *a, const void *b) {
+    return ((int)a - (int)b);
+}
+
+// Function to compare for descending order
+int compareDesc(const void *a, const void *b) {
+    return ((int)b - (int)a);
+}
+
+void sortArray(int arr[], int n) {
+    int mid = n / 2;
+
+    // Sort the first half in ascending order
+    qsort(arr, mid, sizeof(int), compareAsc);
+
+    // Sort the second half in descending order
+    qsort(arr + mid, n - mid, sizeof(int), compareDesc);
+}
+
+int main() {
+    int arr[] = {12, 7, 14, 9, 5, 3, 11, 6};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    sortArray(arr, n);
+
+    // Print the sorted array
+    printf("Sorted array:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
